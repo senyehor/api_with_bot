@@ -1,3 +1,4 @@
+from django.utils.translation import gettext as _
 from rest_framework.generics import ListAPIView
 
 from cats.logic import DEFAULT_CATS_AMOUNT, parse_int, RandomCatsQuerier
@@ -15,5 +16,5 @@ class RandomCatsListView(ListAPIView):
 
     def __extract_cats_amount_to_query(self):
         if cats_amount := self.request.GET.get('cats_amount', None):
-            return parse_int(cats_amount, 'the cats_amount you provided failed to parse')
+            return parse_int(cats_amount, _('the cats_amount you provided failed to parse'))
         return DEFAULT_CATS_AMOUNT
