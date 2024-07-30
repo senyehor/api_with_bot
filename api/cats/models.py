@@ -18,6 +18,9 @@ class Cat(Model):
         max_length=1020
     )
 
+    def __str__(self):
+        return f'{self.name} of breed {self.breed.name}'
+
 
 class Breed(Model):
     name = CharField(
@@ -25,3 +28,6 @@ class Breed(Model):
         blank=False,
         max_length=255
     )
+
+    def __str__(self):
+        return f'breed {self.name}'
