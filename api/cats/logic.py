@@ -2,8 +2,7 @@ from typing import Generic, Iterable, TypeVar
 
 from django.db.models import Model
 
-from api.cats.exceptions import NotEnoughCats
-from api.cats.models import Cat
+from cats.exceptions import FailedToParseInt, NotEnoughCats
 
 CatModelType = TypeVar('CatModelType', bound=Model)
 
@@ -28,3 +27,10 @@ class RandomCatsQuerier(Generic[CatModelType]):
         if cats_count == 0:
             raise NotEnoughCats
         return cats_count < amount
+
+
+def parse_int(data: str, message_on_fail: str) -> int:
+    try:
+        return int(data)
+    except ValueError as e:
+        raise FailedToParseInt(message_on_fail) from e

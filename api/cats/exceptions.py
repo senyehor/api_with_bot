@@ -8,3 +8,7 @@ class CatsBaseException(Exception):
 
 class NotEnoughCats(CatsBaseException):
     message = 'there are not enough cats'
+
+
+class FailedToParseInt(CatsBaseException):
+    ...
