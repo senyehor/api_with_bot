@@ -1,14 +1,17 @@
-class CatsBaseException(Exception):
-    message: str = None
+from django.utils.translation import gettext as _
+from rest_framework import status
+from rest_framework.exceptions import APIException
 
-    def __init__(self, message: str = None):
-        # __class__.message allows to provide a default message in a subclass declaration
-        self.message = message or self.__class__.message
+
+class CatsBaseException(APIException):
+    pass
 
 
 class NotEnoughCats(CatsBaseException):
-    message = 'there are not enough cats'
+    status_code = status.HTTP_204_NO_CONTENT
+    default_detail = _('Not enough cats to fulfill request')
 
 
 class FailedToParseInt(CatsBaseException):
-    ...
+    status_code = status.HTTP_400_BAD_REQUEST
+    default_detail = _('failed to parse an integer value you provided')

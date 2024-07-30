@@ -35,4 +35,4 @@ def parse_int(data: str, message_on_fail: str) -> int:
     try:
         return int(data)
     except ValueError as e:
-        raise FailedToParseInt(message_on_fail) from e
+        raise FailedToParseInt(detail=message_on_fail) from e
