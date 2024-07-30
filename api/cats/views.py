@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from django.utils.translation import gettext as _
 from rest_framework.generics import ListAPIView
 
@@ -18,3 +19,7 @@ class RandomCatsListView(ListAPIView):
         if cats_amount := self.request.GET.get('cats_amount', None):
             return parse_int(cats_amount, _('the cats_amount you provided failed to parse'))
         return DEFAULT_CATS_AMOUNT
+
+
+def docs(request):
+    return render(request, 'docs.html')

@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation - Random Cats API</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+<h1>Random Cats API Documentation</h1>
+
+<h2>Overview</h2>
+<p>This API allows you to retrieve random cat data. You can specify the number of cats you want to receive and view the
+    documentation for more details.</p>
+
+<h2>Endpoints</h2>
+
+<div class="endpoint">
+    <h3>/api/random-cats</h3>
+    <p><strong>Method:</strong> GET</p>
+    <p><strong>Description:</strong> Retrieves random cat data.</p>
+    <p><strong>Parameters:</strong></p>
+    <ul>
+        <li><code>cats_amount=<i>int</i></code> - Optional number of random cats to retrieve. (e.g., 1, 2, 3)</li>
+    </ul>
+    <p><strong>Example Request:</strong></p>
+    <code>GET /api/random-cats?cats_amount=3</code>
+    <p><strong>Example Response:</strong></p>
+    <pre>
+    [
+        {
+            "id": 7,
+            "name": "Chloe",
+            "breed": {
+                "name": "British Shorthair"
+            },
+            "description_from_owner": "Affectionate and gentle."
+        },
+        {
+            "id": 20,
+            "name": "Lilly",
+            "breed": {
+                "name": "Oriental Shorthair"
+            },
+            "description_from_owner": "Loves attention and cuddles."
+        },
+        {
+            "id": 12,
+            "name": "Tigger",
+            "breed": {
+                "name": "Persian"
+            },
+            "description_from_owner": "Adventurous and bold."
+        }
+    ]
+    </pre>
+</div>
+
+<div class="endpoint">
+    <h3>/api/docs</h3>
+    <p><strong>Method:</strong> GET</p>
+    <p><strong>Description:</strong> Provides the API documentation.</p>
+</div>
+</body>
+</html>
