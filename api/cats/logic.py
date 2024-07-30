@@ -4,6 +4,8 @@ from django.db.models import Model
 
 from cats.exceptions import FailedToParseInt, NotEnoughCats
 
+DEFAULT_CATS_AMOUNT = 5
+
 CatModelType = TypeVar('CatModelType', bound=Model)
 
 
