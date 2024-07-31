@@ -10,8 +10,8 @@ SQL_FILE1=$SCRIPT_DIR/cats_breed.sql
 SQL_FILE2=$SCRIPT_DIR/cats_cat.sql
 
 echo "Inserting breeds..."
-docker exec -i $CONTAINER_NAME psql -U $DB_USER -d $DB_NAME -f $SQL_FILE1
+docker exec -i $CONTAINER_NAME psql -U $DB_USER -d $DB_NAME -c "$(cat $SQL_FILE1)"
 
 echo "Inserting cats..."
-docker exec -i $CONTAINER_NAME psql -U $DB_USER -d $DB_NAME -f $SQL_FILE2
+docker exec -i $CONTAINER_NAME psql -U $DB_USER -d $DB_NAME -c "$(cat $SQL_FILE2)"
 echo "DB populated successfully"
