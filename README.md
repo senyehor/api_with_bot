@@ -1,6 +1,7 @@
 # Api for random cats info wit bot
 ### How to use
 Just use `@randomm_cats_bot` and you will have info about some cats :)  
+Or you can visit api at `35.156.121.38`, there is documentation on detailed use
 ### How to deploy
 1. Install [docker](https://docs.docker.com/engine/install/)
 2. Copy project `git clone https://github.com/senyehor/api_with_bot.git` and enter the directory
