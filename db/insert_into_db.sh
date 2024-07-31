@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CONTAINER_NAME=api_with_bot_db
-DB_USER=postgresq
+DB_USER=postgres
 DB_NAME=api_with_bot
 
 SCRIPT_DIR=$(dirname $(realpath $0))
