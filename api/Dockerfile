@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 python:3.11-slim AS dependencies-builder
+FROM python:3.11-slim AS dependencies-builder
 ENV PYTHONFAULTHANDLER=1
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONDONTWRITEBYTECODE=1
