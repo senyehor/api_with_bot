@@ -37,6 +37,15 @@ services:
     expose:
       - 5432
 
+  bot:
+    container_name: bot
+    build:
+      context: bot/
+    restart: unless-stopped
+    env_file:
+      - bot_production.env
+    depends_on:
+      - django_api
 
 volumes:
   pg_data:
