@@ -1,0 +1,4 @@
+DEBUG=trueorfalse
+DATABASE_URL=postgresql://user:password@host/db_name
+SECRET_KEY=secret_key
+APP_PORT=1
