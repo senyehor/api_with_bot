@@ -4,7 +4,7 @@ services:
       context: api
     container_name: django_api
     env_file:
-      - api_prod.env
+      - api_production.env
     volumes:
       - static:/app/staticfiles/
     depends_on:
