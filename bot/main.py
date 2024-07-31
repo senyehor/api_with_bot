@@ -9,8 +9,8 @@ from aiogram.enums import ParseMode
 from aiogram.filters import CommandStart
 from aiogram.types import Message
 
-from bot.keyboard import GET_MORE_CATS_MARKUP, MORE_CATS
-from bot.logic import format_cats, query_cats
+from keyboard import GET_MORE_CATS_MARKUP, MORE_CATS
+from logic import format_cats, query_cats
 
 TOKEN = getenv("BOT_TOKEN")
 
