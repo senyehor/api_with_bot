@@ -1,0 +1,43 @@
+services:
+  django:
+    build:
+      context: api
+    container_name: django_api
+    env_file:
+      - api_prod.env
+    volumes:
+      - static:/app/staticfiles/
+    depends_on:
+      - db
+    expose:
+      - 8000
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:1.23.2
+    container_name: nginx
+    volumes:
+      - static:/django_staticfiles/
+      - ./nginx/django.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "8001:80"
+    depends_on:
+      - django
+    restart: unless-stopped
+
+  db:
+    container_name: api_with_bot_db
+    build:
+      context: db/
+    restart: unless-stopped
+    env_file:
+      - db_production.env
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    expose:
+      - 5432
+
+
+volumes:
+  pg_data:
+  static:
