@@ -1,0 +1,10 @@
+INSERT INTO public.cats_breed (id, name) VALUES (1, 'Siamese');
+INSERT INTO public.cats_breed (id, name) VALUES (2, 'Persian');
+INSERT INTO public.cats_breed (id, name) VALUES (3, 'Maine Coon');
+INSERT INTO public.cats_breed (id, name) VALUES (4, 'Ragdoll');
+INSERT INTO public.cats_breed (id, name) VALUES (5, 'Bengal');
+INSERT INTO public.cats_breed (id, name) VALUES (6, 'Sphynx');
+INSERT INTO public.cats_breed (id, name) VALUES (7, 'British Shorthair');
+INSERT INTO public.cats_breed (id, name) VALUES (8, 'Abyssinian');
+INSERT INTO public.cats_breed (id, name) VALUES (9, 'Birman');
+INSERT INTO public.cats_breed (id, name) VALUES (10, 'Oriental Shorthair');
