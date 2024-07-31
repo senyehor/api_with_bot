@@ -45,7 +45,7 @@ services:
     env_file:
       - bot_production.env
     depends_on:
-      - django_api
+      - django
 
 volumes:
   pg_data:
